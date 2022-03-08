@@ -18,7 +18,7 @@ public class Symptom implements Comparable<Symptom> {
 	
 	@Override
 	public int compareTo(Symptom s) {
-		return namme.compareTo(s.getName());
+		return name.compareTo(s.getName());
 	}
 	
 	
