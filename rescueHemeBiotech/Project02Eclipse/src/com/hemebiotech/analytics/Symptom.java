@@ -21,5 +21,12 @@ public class Symptom implements Comparable<Symptom> {
 		return name.compareTo(s.getName());
 	}
 	
-	
+	@Override 
+	public boolean equals(Object o){
+		if (this == o) return true;
+		if (o == null) return true;
+		if (getClass() != o.getClass()) return false;
+		Symptom sy = (Symptom) o;
+		return sy.getName().equals(name);
+	}
 }
