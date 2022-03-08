@@ -9,6 +9,16 @@ public class HashMapSymptoms extends HashMap<Symptom, Integer> {
 	}
 	
 	@Override
+	public Integer put(Symptom sy, Integer nb){
+		if (containsKey(sy)){
+			super.put(sy,this.get(sy)+1);
+		}else{
+			super.put(sy,1);
+		}
+		return nb;
+	}
+	
+	@Override
 	public boolean containsKey(Object key){
 		if (!validKey(key)){
 			return false;   //EXCEPTION
