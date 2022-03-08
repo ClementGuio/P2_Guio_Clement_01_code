@@ -29,4 +29,9 @@ public class Symptom implements Comparable<Symptom> {
 		Symptom sy = (Symptom) o;
 		return sy.getName().equals(name);
 	}
+	
+	@Override
+	public int hashCode(){
+		return name.hashCode();
+	}
 }
