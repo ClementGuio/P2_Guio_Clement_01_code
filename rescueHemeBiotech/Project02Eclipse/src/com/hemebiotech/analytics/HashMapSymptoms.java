@@ -1,6 +1,8 @@
 package com.hemebiotech.analytics;
 
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class HashMapSymptoms extends HashMap<Symptom, Integer> {
 	
@@ -37,6 +39,13 @@ public class HashMapSymptoms extends HashMap<Symptom, Integer> {
 		if (obj instanceof Symptom) return true;
 		return false;
 	}
-
-
+	
+	public ArrayList<Symptom> sortedSymptoms(){
+		ArrayList<Symptom> listSymptoms = new ArrayList<Symptom>();
+		
+		listSymptoms.addAll(this.keySet());
+		Collections.sort(listSymptoms);
+		
+		return listSymptoms;
+	}
 }
