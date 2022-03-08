@@ -1,6 +1,6 @@
 package com.hemebiotech.analytics;
 
-public class Symptom implements Comparable<T> {
+public class Symptom implements Comparable<Symptom> {
 	String name;
 	
 	public Symptom(String name) {
