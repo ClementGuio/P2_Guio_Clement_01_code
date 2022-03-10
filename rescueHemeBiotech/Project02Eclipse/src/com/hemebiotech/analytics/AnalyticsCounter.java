@@ -35,6 +35,14 @@ public class AnalyticsCounter {
 
 		//Tri des symptomes (ordre lexicographique)
 		ArrayList<Symptom> sortedSymptoms = mapSy.sortedSymptoms();
+		
+		//Tri des symptomes (ordre d'occurences)
+		/*ArrayList<Symptom> sortedSymptomsRate = mapSy.sortedSymptomsByNbOccurences();
+		for (Symptom s : sortedSymptomsRate) {
+			System.out.println(s);
+		}*/
+		
+		
 		//Ecriture du résultats dans results.out
 		try {
 			FileWriter writer = new FileWriter ("result.out");

@@ -28,6 +28,17 @@ public class MapSymptoms extends HashMap<String,Symptom> {
 		return listSymptoms;
 	}
 	
+	
+	public ArrayList<Symptom> sortedSymptomsByNbOccurences(){
+		ArrayList<Symptom> listSymptoms = new ArrayList<Symptom>();
+		
+		listSymptoms.addAll(this.values());
+		listSymptoms.sort(
+				(s1,s2) -> ((Integer)s1.getNbOccurences()).compareTo((Integer)s2.getNbOccurences()));
+		Collections.reverse(listSymptoms);
+		return listSymptoms;
+	}
+	
 	@Override
 	public String toString() {
 		String str = "";
