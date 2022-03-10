@@ -34,19 +34,4 @@ public class Symptom implements Comparable<Symptom> {
 		return name.compareTo(s.getName());
 		//return this.nbOccurences-s.nbOccurences;
 	}
-	
-	//EFFACER
-	@Override 
-	public boolean equals(Object o){
-		if (this == o) return true;
-		if (o == null) return true;
-		if (getClass() != o.getClass()) return false;
-		Symptom sy = (Symptom) o;
-		return sy.getName().equals(name);
-	}
-	//EFFACER
-	@Override
-	public int hashCode(){
-		return name.hashCode();
-	}
 }
