@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics;
 
 public class Symptom implements Comparable<Symptom> {
-	private String name;
+	private final String name;
 	private int nbOccurences;
 	
 	public Symptom(String name) {
@@ -26,7 +26,7 @@ public class Symptom implements Comparable<Symptom> {
 	
 	@Override
 	public String toString() {
-		return name;
+		return name+" : "+nbOccurences;
 	}
 	
 	@Override
