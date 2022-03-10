@@ -10,36 +10,13 @@ public class MapSymptoms extends HashMap<String,Symptom> {
 		super();
 	}
 	
-	// EFFACER
-	/*@Override
-	public Integer put(Symptom sy, Integer nb){
-		if (containsKey(sy)){
-			super.put(sy,this.get(sy)+1);
-		}else{
-			super.put(sy,1);
+	public void add(String nameSy) {
+		Symptom sy = this.get(nameSy);
+		if (sy==null) {
+			this.put(nameSy, new Symptom(nameSy));
+		}else {
+			sy.setNbOccurences(sy.getNbOccurences()+1);
 		}
-		return nb;
-	}
-	
-	//EFFACER
-	@Override
-	public boolean containsKey(Object key){
-		if (!validKey(key)){
-			return false;   //EXCEPTION
-		}
-		Symptom sy = (Symptom) key;
-		for (Symptom s : super.keySet()){
-			if (s.equals(sy)){
-				return true;
-			}
-		}
-		return false;
-	}*/
-	
-	public boolean validKey(Object obj){
-		if (obj == null) return false;
-		if (obj instanceof Symptom) return true;
-		return false;
 	}
 	
 	public ArrayList<Symptom> sortedSymptoms(){
