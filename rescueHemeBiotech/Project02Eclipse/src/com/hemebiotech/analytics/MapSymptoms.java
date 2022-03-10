@@ -10,7 +10,7 @@ public class MapSymptoms extends HashMap<String,Symptom> {
 		super();
 	}
 	
-	public void add(String nameSy) {
+	public void addSymptom(String nameSy) {
 		Symptom sy = this.get(nameSy);
 		if (sy==null) {
 			this.put(nameSy, new Symptom(nameSy));
@@ -26,5 +26,14 @@ public class MapSymptoms extends HashMap<String,Symptom> {
 		Collections.sort(listSymptoms);
 		
 		return listSymptoms;
+	}
+	
+	@Override
+	public String toString() {
+		String str = "";
+		for (Symptom sy : this.values()) {
+			str += sy+"\n";
+		}
+		return str;
 	}
 }
