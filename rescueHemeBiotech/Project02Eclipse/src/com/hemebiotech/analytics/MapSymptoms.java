@@ -4,13 +4,14 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class HashMapSymptoms extends HashMap<Symptom, Integer> {
+public class MapSymptoms extends HashMap<String,Symptom> {
 	
-	public HashMapSymptoms() {
+	public MapSymptoms() {
 		super();
 	}
 	
-	@Override
+	// EFFACER
+	/*@Override
 	public Integer put(Symptom sy, Integer nb){
 		if (containsKey(sy)){
 			super.put(sy,this.get(sy)+1);
@@ -20,6 +21,7 @@ public class HashMapSymptoms extends HashMap<Symptom, Integer> {
 		return nb;
 	}
 	
+	//EFFACER
 	@Override
 	public boolean containsKey(Object key){
 		if (!validKey(key)){
@@ -32,7 +34,7 @@ public class HashMapSymptoms extends HashMap<Symptom, Integer> {
 			}
 		}
 		return false;
-	}
+	}*/
 	
 	public boolean validKey(Object obj){
 		if (obj == null) return false;
@@ -43,7 +45,7 @@ public class HashMapSymptoms extends HashMap<Symptom, Integer> {
 	public ArrayList<Symptom> sortedSymptoms(){
 		ArrayList<Symptom> listSymptoms = new ArrayList<Symptom>();
 		
-		listSymptoms.addAll(this.keySet());
+		listSymptoms.addAll(this.values());
 		Collections.sort(listSymptoms);
 		
 		return listSymptoms;
