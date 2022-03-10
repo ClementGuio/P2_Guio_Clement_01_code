@@ -9,42 +9,41 @@ import java.util.ArrayList;
 
 public class AnalyticsCounter {
 	
-	public static void main(String args[]) throws Exception {
+	public static void main(String args[]){
 
-		HashMapSymptoms mapSy = new HashMapSymptoms();
+		MapSymptoms mapSy = new MapSymptoms();
 		
+		//Lecture du fichier symptoms.text
 		BufferedReader reader;
 		try{
 			reader = new BufferedReader (new FileReader("symptoms.txt"));
 		
-			try{
-				String line = reader.readLine();
-		
-				while (line != null){
-					mapSy.put(new Symptom(line),1);
-					line = reader.readLine();
-				}
-				reader.close();
-			}catch (IOException e){
-				e.printStackTrace();
+			
+			String line = reader.readLine();
+			//Mise à jour de MapSymptoms
+			while (line != null){
+				mapSy.addSymptom(line);
+				line = reader.readLine();
 			}
-		
+			reader.close();
+				
 		}catch (FileNotFoundException f){
 			f.printStackTrace();
+		}catch (IOException e){
+			e.printStackTrace();
 		}
-		
 
+		//Tri des symptomes (ordre lexicographique)
 		ArrayList<Symptom> sortedSymptoms = mapSy.sortedSymptoms();
-		/*
-		for (Symptom s : sortedSymptoms){
-			System.out.println(s+" : "+mapSy.get(s));
-		}*/
-				
-		// next generate output
-		FileWriter writer = new FileWriter ("result.out");
-		for (Symptom s : sortedSymptoms) {
-			writer.write(s.getName()+" : "+mapSy.get(s)+"\n");
+		//Ecriture du résultats dans results.out
+		try {
+			FileWriter writer = new FileWriter ("result.out");
+			for (Symptom s : sortedSymptoms) {
+				writer.write(s.toString()+"\n");
+			}
+			writer.close();
+		}catch (IOException e) {
+			e.printStackTrace();
 		}
-		writer.close();
 	}
 }
