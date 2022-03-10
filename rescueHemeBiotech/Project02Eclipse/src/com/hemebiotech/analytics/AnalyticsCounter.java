@@ -37,10 +37,10 @@ public class AnalyticsCounter {
 		ArrayList<Symptom> sortedSymptoms = mapSy.sortedSymptoms();
 		
 		//Tri des symptomes (ordre d'occurences)
-		/*ArrayList<Symptom> sortedSymptomsRate = mapSy.sortedSymptomsByNbOccurences();
-		for (Symptom s : sortedSymptomsRate) {
+		ArrayList<Symptom> sortedByNbOccurences = mapSy.sortedByNbOccurences();
+		for (Symptom s : sortedByNbOccurences) {
 			System.out.println(s);
-		}*/
+		}
 		
 		
 		//Ecriture du résultats dans results.out

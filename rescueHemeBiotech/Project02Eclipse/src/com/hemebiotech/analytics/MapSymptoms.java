@@ -29,7 +29,7 @@ public class MapSymptoms extends HashMap<String,Symptom> {
 	}
 	
 	
-	public ArrayList<Symptom> sortedSymptomsByNbOccurences(){
+	public ArrayList<Symptom> sortedByNbOccurences(){
 		ArrayList<Symptom> listSymptoms = new ArrayList<Symptom>();
 		
 		listSymptoms.addAll(this.values());
