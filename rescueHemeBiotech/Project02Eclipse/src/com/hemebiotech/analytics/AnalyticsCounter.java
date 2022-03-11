@@ -10,11 +10,12 @@ import java.util.ArrayList;
 public class AnalyticsCounter {
 	
 	public static void main(String args[]){
-
-		MapSymptoms mapSy = new MapSymptoms();
+		
+		ReadSymptomDataFromFile readerSymptomFile = new ReadSymptomDataFromFile("symptoms.txt");
+		MapSymptoms mapSy = readerSymptomFile.getSymptoms();
 		
 		//Lecture du fichier symptoms.text
-		BufferedReader reader;
+		/*BufferedReader reader;
 		try{
 			reader = new BufferedReader (new FileReader("symptoms.txt"));
 		
@@ -31,7 +32,7 @@ public class AnalyticsCounter {
 			f.printStackTrace();
 		}catch (IOException e){
 			e.printStackTrace();
-		}
+		}*/
 
 		//Tri des symptomes (ordre lexicographique)
 		ArrayList<Symptom> sortedSymptoms = mapSy.sortedSymptoms();
