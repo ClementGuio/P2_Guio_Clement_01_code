@@ -34,8 +34,9 @@ public class MapSymptoms extends HashMap<String,Symptom> {
 		
 		listSymptoms.addAll(this.values());
 		listSymptoms.sort(
-				(s1,s2) -> ((Integer)s1.getNbOccurences()).compareTo((Integer)s2.getNbOccurences()));
-		Collections.reverse(listSymptoms);
+				(s1,s2) -> ((Integer)s2.getNbOccurences()).compareTo((Integer)s1.getNbOccurences()) == 0 
+					? s1.getName().compareTo(s2.getName()) 
+					: ((Integer)s2.getNbOccurences()).compareTo((Integer)s1.getNbOccurences()));
 		return listSymptoms;
 	}
 	
