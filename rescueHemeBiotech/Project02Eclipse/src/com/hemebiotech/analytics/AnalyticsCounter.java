@@ -7,44 +7,37 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+
+/**
+ * Main class of the symptom registry program. 
+ * 
+ * @author Clément Guio
+ *
+ */
 public class AnalyticsCounter {
 	
+	
+	/**
+	 * Main method of this program. Calls methods of other classes to create a map of symptoms stored in a file, 
+	 * create an ordered list of symptoms and write the results in a file called results.out .
+	 * 
+	 * @see MapSymptoms
+	 * @see ReadSymptomFromDataFile
+	 * @param args
+	 */
 	public static void main(String args[]){
 		
 		ReadSymptomDataFromFile readerSymptomFile = new ReadSymptomDataFromFile("symptoms.txt");
 		MapSymptoms mapSy = readerSymptomFile.getSymptoms();
-		
-		//Lecture du fichier symptoms.text
-		/*BufferedReader reader;
-		try{
-			reader = new BufferedReader (new FileReader("symptoms.txt"));
-		
-			
-			String line = reader.readLine();
-			//Mise à jour de MapSymptoms
-			while (line != null){
-				mapSy.addSymptom(line);
-				line = reader.readLine();
-			}
-			reader.close();
-				
-		}catch (FileNotFoundException f){
-			f.printStackTrace();
-		}catch (IOException e){
-			e.printStackTrace();
-		}*/
 
-		//Tri des symptomes (ordre lexicographique)
 		ArrayList<Symptom> sortedSymptoms = mapSy.sortedSymptoms();
 		
-		//Tri des symptomes (ordre d'occurences)
-		ArrayList<Symptom> sortedByNbOccurences = mapSy.sortedByNbOccurences();
+		//Sort by nbOccurences
+		/*ArrayList<Symptom> sortedByNbOccurences = mapSy.sortedByNbOccurences();
 		for (Symptom s : sortedByNbOccurences) {
 			System.out.println(s);
-		}
+		}*/
 		
-		
-		//Ecriture du résultats dans results.out
 		try {
 			FileWriter writer = new FileWriter ("result.out");
 			for (Symptom s : sortedSymptoms) {

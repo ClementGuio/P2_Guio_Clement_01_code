@@ -4,12 +4,28 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * MapSymptoms associate a name with the corresponding Symptom
+ * @see Symptom 
+ * 
+ * 
+ * @author Clément Guio
+ *
+ */
 public class MapSymptoms extends HashMap<String,Symptom> {
 	
+	/**
+	 * Constructor of a MapSymptom
+	 */
 	public MapSymptoms() {
 		super();
 	}
 	
+	/**
+	 * Add a symptom in this map.
+	 * If nameSy is already stored, it increments the number of occurrences of this symptom.
+	 * @param nameSy
+	 */
 	public void addSymptom(String nameSy) {
 		Symptom sy = this.get(nameSy);
 		if (sy==null) {
@@ -19,6 +35,10 @@ public class MapSymptoms extends HashMap<String,Symptom> {
 		}
 	}
 	
+	/**
+	 * Return a sorted list of symptoms.
+	 * @return listSymptoms sort by lexicographic order
+	 */
 	public ArrayList<Symptom> sortedSymptoms(){
 		ArrayList<Symptom> listSymptoms = new ArrayList<Symptom>();
 		
@@ -28,7 +48,10 @@ public class MapSymptoms extends HashMap<String,Symptom> {
 		return listSymptoms;
 	}
 	
-	
+	/**
+	 * Return a sorted list of symptoms
+	 * @return listSymptoms sort by their number of occurrences (if equals, sort by lexicographic order)
+	 */
 	public ArrayList<Symptom> sortedByNbOccurences(){
 		ArrayList<Symptom> listSymptoms = new ArrayList<Symptom>();
 		
