@@ -63,6 +63,9 @@ public class MapSymptoms extends HashMap<String,Symptom> {
 		return listSymptoms;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String toString() {
 		String str = "";

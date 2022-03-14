@@ -52,11 +52,17 @@ public class Symptom implements Comparable<Symptom> {
 		this.nbOccurences = nbOccurences;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String toString() {
 		return name+" : "+nbOccurences;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public int compareTo(Symptom s) {
 		return name.compareTo(s.getName());

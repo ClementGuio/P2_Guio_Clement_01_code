@@ -1,7 +1,5 @@
 package com.hemebiotech.analytics;
 
-import java.util.List;
-
 /**
  * Anything that will read symptom data from a source.
  * The return value from the operation is a MapSymptoms with no duplication.
@@ -9,6 +7,7 @@ import java.util.List;
  * @see MapSymptoms
  */
 public interface ISymptomReader {
+	
 	/**
 	 * If no data is available, return an empty MapSymptoms.
 	 * 
