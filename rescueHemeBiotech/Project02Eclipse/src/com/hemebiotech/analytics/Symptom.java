@@ -12,7 +12,7 @@ package com.hemebiotech.analytics;
  */
 public class Symptom implements Comparable<Symptom> {
 	private final String name;
-	private Integer nbOccurences;
+	private int nbOccurences;
 	
 	/**
 	 * Constructor of a symptom

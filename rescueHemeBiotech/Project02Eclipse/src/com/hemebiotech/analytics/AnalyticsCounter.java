@@ -30,15 +30,15 @@ public class AnalyticsCounter {
 		ArrayList<Symptom> sortedSymptoms = mapSy.sortedSymptoms();
 		
 		//Sort by nbOccurences
-		/*ArrayList<Symptom> sortedByNbOccurences = mapSy.sortedByNbOccurences();
+		ArrayList<Symptom> sortedByNbOccurences = mapSy.sortedByNbOccurences();
 		for (Symptom s : sortedByNbOccurences) {
 			System.out.println(s);
-		}*/
+		}
 		
 		try {
 			FileWriter writer = new FileWriter ("result.out");
 			for (Symptom s : sortedSymptoms) {
-				writer.write(s.toString()+"\n");
+				writer.write(s+"\n");
 			}
 			writer.close();
 		}catch (IOException e) {
